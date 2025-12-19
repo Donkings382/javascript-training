@@ -61,14 +61,13 @@ console.log(vowelCount("sandra"));
 
 //6 function to capitalize first letter of a word
 let capitalize = (str) => {
-  let newStr = "";
-  for (let i = 0; i < str.length; i++) {
-    let capitalStri = str[i].toUpperCase();
-    newStr += capitalStri;
+  let newStr = str[0].toUpperCase();
+  for (let i = 1; i < str.length; i++) {
+    newStr += str[i];
   }
   return console.log(newStr);
 };
-capitalize("sandra");
+capitalize("barbara");
 
 //7 function that uses IIFE
 (function () {
