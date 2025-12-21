@@ -109,3 +109,13 @@ function fc() {
 fb();
 fc();
 fa();
+
+/*
+function factorial(num){
+    let muliply=1
+    for(let i=num;i>0;i--){
+        muliply *=i
+    }
+    console.log(muliply)
+}
+factorial(6)*/
