@@ -50,38 +50,37 @@ function rps() {
 //rps();
 
 //guess the number game
-function guessNumber() {
+function guessGame() {
   let randomGuess = Math.floor(Math.random() * 10) + 1;
-
-  let computerMind = randomGuess;
-
   let userAttempts = 0;
   let maxAttempts = 10;
   while (userAttempts < maxAttempts) {
-    let userInput = parseInt(prompt("Guess a number from 1 to 10"));
-    let userChoice = userInput;
+    let userprompt = parseInt(prompt("Guess the number from 1 to 10"));
+    let userChoice = userprompt;
     userAttempts++;
 
-    if (userChoice > computerMind) {
+    let attemptsLeft = maxAttempts - userAttempts;
+    if (userChoice < randomGuess) {
       console.log(
-        `Your guess is higher than what i have  in mind. Attempt ${userAttempts}, you guessed ${userChoice}`
+        `You guessed ${userChoice} which is lower than what i had in mind!, you have ${attemptsLeft} attempts left`
       );
-    } else if (userChoice < computerMind) {
+    } else if (userChoice > randomGuess) {
       console.log(
-        `Your guess is lower than what i have  in mind. Attempt ${userAttempts}, you guessed ${userChoice}`
+        `You guessed ${userChoice} which is higher than what i had in mind!, you have ${attemptsLeft} attempts left`
       );
-    } else if (userChoice === computerMind) {
-      console.log("Your guess is correct!");
+    } else if (userChoice === randomGuess) {
+      console.log(
+        `You guessed ${userChoice} which is exactly what i had in mind!, the number on my mind was ${randomGuess}!`
+      );
       return;
     }
 
     if (userAttempts === maxAttempts) {
       console.log(
-        `User has expired ${maxAttempts} attempts, the number is ${computerMind}`
+        `You have exhausted your attempts, you made a total of ${attemptsLeft}`
       );
-
       return;
     }
   }
 }
-guessNumber();
+guessGame();
