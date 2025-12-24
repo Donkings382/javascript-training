@@ -50,4 +50,5 @@
  * TDZ only applies to const and let, it does not apply to functions and Var
  * In creation phase for const and let, hoisting without first initializing returns a referenceError but it returns undefined for var
  * Functions can be   invoked and hoisted to their fullest extent before the function itself is initialized a value and defined
+ * Functions as expressions are treated like a variable instead of a function thus the rules of hoisting applies and depending on if the variable is declared with const, let or var, the behavioral patterns i just highlighted will apply
  */
