@@ -34,7 +34,7 @@ function countButton() {
   return function counting() {
     document.getElementById("divbtn").addEventListener("click", () => {
       document.getElementById("counter").innerText = ++count;
-      console.log(count);
+      console.log("count times: ", count);
     });
   };
 }
